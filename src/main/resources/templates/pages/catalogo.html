@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width = 1050, user-scalable = yes" />
+
+	<title> Catálogo Digital - Obsidiana 2023 </title>
+<!-- link obsidiana --> 	
+	<link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../css/barra.css">
+	<link rel="stylesheet" href="../css/catalogo.css">
+<!-- hasta aqui link obsidiana --> 
+</head>
+
+<script type="text/javascript" src="../extras/jquery.min.1.7.js"></script>
+<script type="text/javascript" src="../extras/modernizr.2.5.3.min.js"></script>
+
+
+<body>
+<!-- nav bar  <3-->
+<header>
+	<section class="navigation">
+		<div class="nav-container">
+			<div class="brand">
+				<a th:href="@{/index}" class=".nav-centrado logo-cont"><img src="https://res.cloudinary.com/dzham2sp8/image/upload/v1676485585/barra/logo_obsidiana_sin_letras_cj9zvx.png" alt="" class="logo"></a>
+			</div>
+			<nav>
+				<div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+				<ul class="nav-list">
+					<li>
+						<a th:href="@{/index}">Home</a>
+					</li>
+					<li>
+						<a href="#">Servicios</a>
+						<ul class="nav-dropdown">
+							<li>
+								<a th:href="@{/pages/filtrar}">Todos los Productos</a>
+							</li>
+							<li>
+								<a th:href="@{/pages/tuPiedra}">Piedra de Nacimiento</a>
+							</li>
+							<li>
+								<a th:href="@{/pages/aboutus}">Nosotros</a>
+							</li>
+
+							<li>
+								<a th:href="@{/pages/contacto}">Contacto</a>
+							</li>
+						</ul>
+					</li>
+					<li class="li-encuentra">
+						<div class="parteD nav-centrado">
+							<div class="encuentra">
+								<a th:href="@{/pages/findYourRock}" class="visitado .nav-centrado">¡Encuentra tu piedra!</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a th:href="@{/pages/catalogo}">Catálogo</a>
+					</li>
+
+					<li class="li-iconos">
+						<div class="parteE nav-centrado">
+							<div class="iconos">
+								<a href="##"><img src="https://res.cloudinary.com/dzham2sp8/image/upload/v1675874139/barra/carrito_wbkn0j.svg" alt="" class="icono iconoA"></a>
+								<a href="#"><img src="https://res.cloudinary.com/dzham2sp8/image/upload/v1675874139/barra/insta_s625xj.svg" alt="" class="icono iconoB"></a>
+								<div class="iconoC iconoCBarra">
+									<img src="https://res.cloudinary.com/dzham2sp8/image/upload/v1675874139/barra/search_vyjo8i.svg" alt="" class=""><input type="text" class="iconoC" size="1">
+								</div>
+								<a th:href="@{/pages/login}"><img src="https://res.cloudinary.com/dzham2sp8/image/upload/v1675874139/barra/login_e3b87g.svg" alt="" class="icono iconoD"></a>
+							</div>
+						</div>
+					</li>
+
+					<li>
+						<a th:href="@{/pages/findYourRock}" class="parteF">¡Encuentra tu piedra!</a>
+					</li>
+
+					<li>
+						<a th:href="@{/pages/contacto}" class="parteF">Contacto</a>
+					</li>
+
+
+				</ul>
+			</nav>
+		</div>
+	</section>
+</header>
+<div>
+
+	
+
+<div class="flipbook-viewport" >
+	<div class="container">
+		<div class="flipbook">
+			<div style="background-image:url(../catalogo/1.jpg)"></div>
+			<div style="background-image:url(../catalogo/2.jpg)"></div>
+			<div style="background-image:url(../catalogo/3.jpg)"></div>
+			<div style="background-image:url(../catalogo/4.jpg)"></div>
+			<div style="background-image:url(../catalogo/5.jpg)"></div>
+			<div style="background-image:url(../catalogo/6.jpg)"></div>
+			<div style="background-image:url(../catalogo/7.jpg)"></div>
+			<div style="background-image:url(../catalogo/8.jpg)"></div>
+			<div style="background-image:url(../catalogo/9.jpg)"></div>
+			<div style="background-image:url(../catalogo/10.jpg)"></div>
+			<div style="background-image:url(../catalogo/11.jpg)"></div>
+			<div style="background-image:url(../catalogo/12.jpg)"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+<p style="text-align:center" > Catálogo Digital - Obsidiana 2023  </p>
+
+<script type="text/javascript">
+
+function loadApp() {
+
+	// Create the flipbook
+
+	$('.flipbook').turn({
+			// Width
+
+			width:922,
+			
+			// Height
+
+			height:600,
+
+			// Elevation
+
+			elevation: 50,
+			
+			// Enable gradients
+
+			gradients: true,
+			
+			// Auto center this flipbook
+
+			autoCenter: true
+
+	});
+}
+
+// Load the HTML4 version if there's not CSS transform
+
+yepnope({
+	test : Modernizr.csstransforms,
+	yep: ['../lib/turn.js'],
+	nope: ['../lib/turn.html4.min.js'],
+	both: ['../css/catalogo.css'],
+	complete: loadApp
+});
+
+</script>
+
+<script src="../js/bar.js"></script>
+</body>
+</html>

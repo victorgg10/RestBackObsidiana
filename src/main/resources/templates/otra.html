@@ -1,0 +1,202 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/barra.css">
+    <title>OBSIDIANA</title>
+</head>
+<body>
+
+
+<!-- nav bar  <3-->
+<header>
+    <section class="navigation">
+        <div class="nav-container">
+            <div class="brand">
+                <a href="index.html" class=".nav-centrado logo-cont"><img src="https://res.cloudinary.com/dzham2sp8/image/upload/v1676485585/barra/logo_obsidiana_sin_letras_cj9zvx.png" alt="" class="logo"></a>
+            </div>
+            <nav>
+                <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+                <ul class="nav-list">
+                    <li>
+                        <a href="./index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Servicios</a>
+                        <ul class="nav-dropdown">
+                            <li>
+                                <a href="#!">Todos los Productos</a>
+                            </li>
+                            <li>
+                                <a href="./pages/tuPiedra.html">Piedra de Nacimiento</a>
+                            </li>
+                            <li>
+                                <a href="./pages/aboutus.html">Nosotros</a>
+                            </li>
+
+                            <li>
+                                <a href="./pages/contacto.html">Contacto</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="li-encuentra">
+                        <div class="parteD nav-centrado">
+                            <div class="encuentra">
+                                <a href="./pages/findYourRock.html" class="visitado .nav-centrado">¡Encuentra tu piedra!</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="./pages/catalogo.html">Catálogo</a>
+                    </li>
+
+                    <li class="li-iconos">
+                        <div class="parteE nav-centrado">
+                            <div class="iconos">
+                                <a href="##"><img src="https://res.cloudinary.com/dzham2sp8/image/upload/v1675874139/barra/carrito_wbkn0j.svg" alt="" class="icono iconoA"></a>
+                                <a href="#"><img src="https://res.cloudinary.com/dzham2sp8/image/upload/v1675874139/barra/insta_s625xj.svg" alt="" class="icono iconoB"></a>
+                                <div class="iconoC iconoCBarra">
+                                    <img src="https://res.cloudinary.com/dzham2sp8/image/upload/v1675874139/barra/search_vyjo8i.svg" alt="" class=""><input type="text" class="iconoC" size="1">
+                                </div>
+                                <a href="./pages/login.html"><img src="https://res.cloudinary.com/dzham2sp8/image/upload/v1675874139/barra/login_e3b87g.svg" alt="" class="icono iconoD"></a>
+                            </div>
+                            </div>
+                    </li>
+
+                    <li>
+                        <a href="./pages/findYourRock.html" class="parteF">¡Encuentra tu piedra!</a>
+                    </li>
+
+                    <li>
+                        <a href="./pages/contacto.html" class="parteF">Contacto</a>
+                    </li>
+
+
+                </ul>
+            </nav>
+        </div>
+    </section>
+</header>
+<br>
+
+<!--Mapa-->
+<style>
+      iframe {
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+<iframe src="./mapa-minerales-rocas/index.html" width="1200" height="680"></iframe>
+
+<br><br><br>
+
+<!--Carrusel-->
+<style>
+  h1 {
+    text-align: center;
+    font-size: 400%;
+  }
+</style>
+
+<h1>Nuestras novedades</h1>
+
+<style>
+.slideshow {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+  }
+  .slides {
+    display: flex;
+    width: 400%;
+    animation: slide 20s infinite;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+      .slide {
+        width: 25%;
+      }
+      .slide img {
+        width: 100%;
+        height: 100%;
+      }
+      .slide p {
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    color: black;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    font-size: 200%;
+  }
+      @keyframes slide {
+        0% {
+          transform: translateX(0);
+        }
+        20% {
+          transform: translateX(0);
+        }
+        25% {
+          transform: translateX(-25%);
+        }
+        45% {
+          transform: translateX(-25%);
+        }
+        50% {
+          transform: translateX(-50%);
+        }
+        70% {
+          transform: translateX(-50%);
+        }
+        75% {
+          transform: translateX(-75%);
+        }
+        95% {
+          transform: translateX(-75%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+    </style>
+
+<div class="slideshow">
+    <div class="slides">
+        <div class="slide">
+            <img src="./images/carrusel/pulsera.jpeg">
+            <p>Pulsera de esferas de Ágata</p>
+        </div>
+        <div class="slide">
+            <img src="./images/carrusel/rana.jpeg">
+            <p>Anillo de obsidiana dorada y alpaca, en forma de rana</p>
+        </div>
+        <div class="slide">
+            <img src="./images/carrusel/espejo.jpeg">
+            <p>Espejo de obsidiana negra</p>
+        </div>
+        <div class="slide">
+            <img src="./images/carrusel/ópalo.jpeg">
+            <p>Ópalo hialita. Fluorescente</p>
+        </div>
+    </div>
+</div>
+
+
+<!--dsdsd-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="./js/bar.js"></script>
+</body>
+</html>

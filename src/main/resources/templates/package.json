@@ -1,0 +1,11 @@
+{
+  "name": "ch22obsidiana",
+  "version": "1.0.0",
+  "description": "servidor de pruebas",
+  "main": "barra.js",
+  "scripts": {
+    "json:server": "json-server --watch db.json"
+  },
+  "author": "",
+  "license": "ISC"
+}

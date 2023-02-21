@@ -1,0 +1,76 @@
+{
+  "users": [
+    {
+      "email": "trt",
+      "nombre": "tret",
+      "telefono": "tretr",
+      "id": 1
+    },
+    {
+      "email": "",
+      "nombre": "",
+      "telefono": "",
+      "id": 2
+    },
+    {
+      "email": "panchol@gmail.com",
+      "nombre": "juqn",
+      "telefono": "654685431",
+      "id": 3
+    },
+    {
+      "nombre": "juqn",
+      "correo": "panchol@gmail.com",
+      "contraseña": "cgvsfvsfvsfv",
+      "id": 4
+    },
+    {
+      "nombre": "testeo post",
+      "correo": "asdasd@hotmail.com",
+      "contraseña": "testeopost1",
+      "id": 5
+    },
+    {
+      "nombre": "",
+      "correo": "",
+      "contraseña": "",
+      "id": 6
+    },
+    {
+      "nombre": "hnghn",
+      "correo": "sdf@hotmail.com",
+      "contraseña": "sdfsfsdfsgdsfg",
+      "id": 7
+    },
+    {
+      "nombre": "testteo post2",
+      "correo": "djfsdj215k@gmail.com",
+      "contraseña": "sdasdasdas465",
+      "id": 8
+    },
+    {
+      "nombre": "testteo post3",
+      "correo": "djfsdj2ss15k@gmail.com",
+      "contraseña": "asdasdaee002",
+      "id": 9
+    },
+    {
+      "nombre": "juqn254",
+      "correo": "djfsdhjhjkj215k@gmail.com",
+      "contraseña": "hjkiop0001iiop",
+      "id": 10
+    },
+    {
+      "nombre": "test",
+      "correo": "test@gmail.com",
+      "contraseña": "test1234",
+      "id": 11
+    },
+    {
+      "nombre": "test03",
+      "correo": "test03@gmail.com",
+      "contraseña": "test03",
+      "id": 12
+    }
+  ]
+}

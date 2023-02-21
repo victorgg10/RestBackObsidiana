@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/barra.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>Document</title>
+</head>
+<body>
+<header>
+    <section class="navigation">
+        <div class="nav-container">
+            <div class="brand">
+                <a th:href="@{/index}" class=".nav-centrado logo-cont"><img src="https://res.cloudinary.com/dzham2sp8/image/upload/v1676485585/barra/logo_obsidiana_sin_letras_cj9zvx.png" alt="" class="logo"></a>
+            </div>
+            <nav>
+                <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+                <ul class="nav-list">
+                    <li>
+                        <a th:href="@{/index}">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Servicios</a>
+                        <ul class="nav-dropdown">
+                            <li>
+                                <a th:href="@{/pages/filtrar}">Todos los Productos</a>
+                            </li>
+                            <li>
+                                <a th:href="@{/pages/tuPiedra}">Piedra de Nacimiento</a>
+                            </li>
+                            <li>
+                                <a th:href="@{/pages/aboutus}">Nosotros</a>
+                            </li>
+
+                            <li>
+                                <a th:href="@{/pages/contacto}">Contacto</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="li-encuentra">
+                        <div class="parteD nav-centrado">
+                            <div class="encuentra">
+                                <a th:href="@{/pages/findYourRock}" class="visitado .nav-centrado">¡Encuentra tu piedra!</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a th:href="@{/pages/catalogo}">Catálogo</a>
+                    </li>
+
+                    <li class="li-iconos">
+                        <div class="parteE nav-centrado">
+                            <div class="iconos">
+                                <a href="##"><img src="https://res.cloudinary.com/dzham2sp8/image/upload/v1675874139/barra/carrito_wbkn0j.svg" alt="" class="icono iconoA"></a>
+                                <a href="#"><img src="https://res.cloudinary.com/dzham2sp8/image/upload/v1675874139/barra/insta_s625xj.svg" alt="" class="icono iconoB"></a>
+                                <div class="iconoC iconoCBarra">
+                                    <img src="https://res.cloudinary.com/dzham2sp8/image/upload/v1675874139/barra/search_vyjo8i.svg" alt="" class=""><input type="text" class="iconoC" size="1">
+                                </div>
+                                <a th:href="@{/pages/login}"><img src="https://res.cloudinary.com/dzham2sp8/image/upload/v1675874139/barra/login_e3b87g.svg" alt="" class="icono iconoD"></a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a th:href="@{/pages/findYourRock}" class="parteF">¡Encuentra tu piedra!</a>
+                    </li>
+
+                    <li>
+                        <a th:href="@{/pages/contacto}" class="parteF">Contacto</a>
+                    </li>
+
+
+                </ul>
+            </nav>
+        </div>
+    </section>
+</header>
+  <!--login-->
+  <div class="container">
+       <!-- inicio backbok -->
+       <div class="backbox">
+        <!-- script para que funcione el login.js -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- vista registro backbox -->
+        <div class="loginMsg">
+          <div class="textcontent">
+            <p class="title">NO TIENES CUENTA?</p>
+            <p>Inicia sesion para ver tus cosas.</p>
+            <button class="swth1" id="switch1">REGISTRAR</button>
+          </div>
+        </div>
+        <!-- vista inicio sesion backbox -->
+        <div class="signupMsg visibility">
+          <div class="textcontent">
+            <p class="title">YA TIENES CUENTA?</p>
+            <p>Inicia sesion para que no pierda nada.</p>
+            <button class="swth2" id="switch2">INICIAR</button>
+          </div>
+        </div>
+      </div>
+      <!-- fin backbox -->
+      <!-- inicio frontbox -->
+      <div class="frontbox">
+        <!-- vista inicio sesion frontbox -->
+        <form >
+        <div class="login">
+          <h2>INICIAR SESION</h2>
+          <div class="inputbox">
+            <input id="correoL" type="email" name="email" placeholder="Correo Electronico" autocomplete="email" required>
+            <input id="contraL" type="password" name="password" placeholder="Contraseña" required>
+          </div>
+          <p>OLVIDASTE TU CONTRASEÑA?</p>
+          <button onclick="revisarUsuarios()">INICIARC</button>
+        </div>
+      </form>
+      <!-- vista registrarse frontbox -->
+      <form class="registro" >
+        <div class="signup hide">
+          <h2>REGISTRARSE</h2>
+          <div class="inputbox">
+            <input id="nombreR" type="text" name="nombre" placeholder="  Nombre Completo" required>
+            <input id="correoR" type="email" name="correo" placeholder=" Correo Electronico" required>
+            <input id="contraR" type="password" name="contraseña" placeholder=" Contraseña" required>
+          </div>
+          <button id="boton" class="boton" type="submit" onclick="guardarUsuarios()">ENVIAR</button>
+        </div>
+      </form>
+    </div>
+    </div>
+
+      <!-- fin frontbox -->
+
+  <script src="../js/login.js"></script>
+  <script src="../js/guardarUsuarios.js"></script>
+
+  <script src="../js/loginComprobaciones.js"></script>
+      <script src="../js/bar.js"></script>
+</body>
+</html>

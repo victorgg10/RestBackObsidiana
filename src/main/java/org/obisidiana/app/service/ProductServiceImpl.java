@@ -1,0 +1,55 @@
+package org.obisidiana.app.service;
+
+import lombok.RequiredArgsConstructor;
+import org.obisidiana.app.entity.Material;
+import org.obisidiana.app.entity.Product;
+import org.obisidiana.app.repository.ProductRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+@Service
+@RequiredArgsConstructor
+public class ProductServiceImpl implements ProductService{
+    @Autowired
+    ProductRepository productRepository;
+    @Override
+    public List<Product> listAllProduct() {
+        return productRepository.findAll();
+    }
+
+    @Override
+    public Product getProduct(Long id) {
+        return null;
+    }
+
+    @Override
+    public Product createProduct(Product product) {
+        return null;
+    }
+
+    @Override
+    public Product updateProduct(Product product) {
+        return null;
+    }
+
+    @Override
+    public Product deleteProduct(Long id) {
+        return null;
+    }
+
+    @Override
+    public List<Product> findByMaterial(Material material) {
+        return productRepository.findByMaterial(material);
+    }
+
+    @Override
+    public List<Product> findByMateriales(List<Long> materialesId) {
+        return productRepository.findByEmailAddress(materialesId);
+    }
+
+    @Override
+    public Product findByName(String name) {
+        return null;
+    }
+}
