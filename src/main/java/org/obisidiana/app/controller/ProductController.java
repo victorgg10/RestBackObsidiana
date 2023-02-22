@@ -14,7 +14,10 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Controller
 
@@ -71,17 +74,39 @@ public class ProductController {
     public String procesar(@ModelAttribute("filter")Filter filter, Model model)
     {
         List<Product> productos;
-        if(filter.getValores().isEmpty()){
+        if(filter.getMaterialesId().isEmpty() && filter.getTiposId().isEmpty()){
             productos = productService.listAllProduct();
         }else{
-            System.out.println(filter.getValores().get(0));
-            Long id = Long.valueOf(filter.getValores().get(0));
-            Material material = materialService.getMaterial(id);
-            List<Long> matIds = new ArrayList<>();
-            matIds.add(1L);
-            matIds.add(2L);
-            System.out.println(matIds);
-            productos = productService.findByMateriales(matIds);
+            if(!(filter.getMaterialesId().isEmpty() && filter.getTiposId().isEmpty())){
+                List<String> tipos = filter.getTiposId();
+                List<Long> largosT= tipos.stream().map(a->Long.valueOf(a)).collect(Collectors.toList());
+                List<String> mates = filter.getMaterialesId();
+                List<Long> largosM = mates.stream().map(a->Long.valueOf(a)).collect(Collectors.toList());
+
+                productos = productService.findByTiposAndMateriales(largosM,largosT);
+            }
+
+            else if(filter.getMaterialesId().isEmpty()){
+                System.out.println(filter.getTiposId().get(0));
+                List<String> tipos = filter.getTiposId();
+               List<Long> largos = tipos.stream().map(a->Long.valueOf(a)).collect(Collectors.toList());
+
+               /* Long id = Long.valueOf(filter.getMaterialesId().get(0));
+                Material material = materialService.getMaterial(id);
+                List<Long> matIds = new ArrayList<>();
+                matIds.add(1L);
+                matIds.add(2L);*/
+                System.out.println(largos);
+                productos = productService.findByTipos(largos);
+            }else{
+                System.out.println("materiales"+filter.getMaterialesId().get(0));
+                List<String> mates = filter.getMaterialesId();
+                List<Long> largos = mates.stream().map(a->Long.valueOf(a)).collect(Collectors.toList());
+                System.out.println("materiales"+largos);
+                productos = productService.findByMateriales(largos);
+            }
+
+
         }
 
 
@@ -96,7 +121,7 @@ public class ProductController {
         return "pages/filtrar";
     }
 
-    @GetMapping("pages/ver")
+   /* @GetMapping("pages/ver")
     public String ver(@ModelAttribute("filter")Filter filter, Model model, SessionStatus status) {
 
 
@@ -106,7 +131,7 @@ public class ProductController {
         model.addAttribute("filter",filter);
         status.setComplete();// completa la session y elimina el usuario tambien en la base de datos
         return "pages/filtrar";
-    }
+    }*/
 
     @RequestMapping(value = "pages/login" ,method = RequestMethod.GET)
     public String login(){

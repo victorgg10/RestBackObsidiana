@@ -6,17 +6,28 @@ import java.util.List;
 
 @Repository
 public class Filter {
-    private List<String> valores;
-///////////////////constructor/////////////////////
+    private List<String> materialesId;
+    private List<String> tiposId;
+
+    ///////////////////constructor/////////////////////
     public Filter() {
     }
 ///////////////////get and set/////////////////////
 
-    public List<String> getValores() {
-        return valores;
+
+    public List<String> getMaterialesId() {
+        return materialesId;
     }
 
-    public void setValores(List<String> valores) {
-        this.valores = valores;
+    public void setMaterialesId(List<String> materialesId) {
+        this.materialesId = materialesId;
+    }
+
+    public List<String> getTiposId() {
+        return tiposId;
+    }
+
+    public void setTiposId(List<String> tiposId) {
+        this.tiposId = tiposId;
     }
 }

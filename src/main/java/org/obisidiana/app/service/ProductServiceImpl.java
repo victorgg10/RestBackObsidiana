@@ -45,7 +45,17 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public List<Product> findByMateriales(List<Long> materialesId) {
-        return productRepository.findByEmailAddress(materialesId);
+        return productRepository.findByMat(materialesId);
+    }
+
+    @Override
+    public List<Product> findByTipos(List<Long> tiposId) {
+        return productRepository.findByTyp(tiposId);
+    }
+
+    @Override
+    public List<Product> findByTiposAndMateriales(List<Long> materialesId, List<Long> tiposId) {
+        return productRepository.findByMatAndTyp(materialesId,tiposId);
     }
 
     @Override

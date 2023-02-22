@@ -16,6 +16,9 @@ public interface ProductService {
    //public List<Product> findByMateriales(List<Long> materialesId);
    public List<Product> findByMateriales(List<Long> materialesId);
 
+    public List<Product> findByTipos(List<Long> tiposId);
+    public List<Product> findByTiposAndMateriales(List<Long> materialesId,List<Long> tiposId);
+
 
 
     public Product findByName(String name);
