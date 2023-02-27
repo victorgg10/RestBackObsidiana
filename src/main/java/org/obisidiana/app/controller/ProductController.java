@@ -1,11 +1,13 @@
 package org.obisidiana.app.controller;
 
+import jakarta.validation.Valid;
 import org.obisidiana.app.entity.Material;
 import org.obisidiana.app.entity.Product;
 import org.obisidiana.app.paso.Filter;
 import org.obisidiana.app.service.MaterialService;
 import org.obisidiana.app.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +21,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-@Controller
+@RestController
 
 //@RequestMapping("/pages")
 public class ProductController {
@@ -57,27 +59,26 @@ public class ProductController {
     }
 
     @RequestMapping(value = "pages/filtrar" ,method = RequestMethod.GET)
-    public String filtrar(Model model){
+    public ResponseEntity<List<Product>> filtrar(){
         Filter filter = new Filter();
         List<Product> productos = productService.listAllProduct();
 
         if(productos.isEmpty()){
-            return null;
+            return ResponseEntity.noContent().build();
         }
-        model.addAttribute("productos",productos);
-        model.addAttribute("filter",filter);
 
-        return "pages/filtrar";
+
+        return ResponseEntity.ok(productos);
     }
 
     @PostMapping("pages/filtrar")
-    public String procesar(@ModelAttribute("filter")Filter filter, Model model)
+    public ResponseEntity<List<Product>> procesar(@RequestBody Filter filter, BindingResult result)
     {
         List<Product> productos;
         if(filter.getMaterialesId().isEmpty() && filter.getTiposId().isEmpty()){
             productos = productService.listAllProduct();
         }else{
-            if(!(filter.getMaterialesId().isEmpty() && filter.getTiposId().isEmpty())){
+            if(!(filter.getMaterialesId().isEmpty()) && !(filter.getTiposId().isEmpty())){
                 List<String> tipos = filter.getTiposId();
                 List<Long> largosT= tipos.stream().map(a->Long.valueOf(a)).collect(Collectors.toList());
                 List<String> mates = filter.getMaterialesId();
@@ -89,7 +90,8 @@ public class ProductController {
             else if(filter.getMaterialesId().isEmpty()){
                 System.out.println(filter.getTiposId().get(0));
                 List<String> tipos = filter.getTiposId();
-               List<Long> largos = tipos.stream().map(a->Long.valueOf(a)).collect(Collectors.toList());
+               List<Long> largos = tipos.stream().map(Long::valueOf).collect(Collectors.toList());
+               //largos.forEach(System.out::println);
 
                /* Long id = Long.valueOf(filter.getMaterialesId().get(0));
                 Material material = materialService.getMaterial(id);
@@ -99,9 +101,11 @@ public class ProductController {
                 System.out.println(largos);
                 productos = productService.findByTipos(largos);
             }else{
+
                 System.out.println("materiales"+filter.getMaterialesId().get(0));
                 List<String> mates = filter.getMaterialesId();
                 List<Long> largos = mates.stream().map(a->Long.valueOf(a)).collect(Collectors.toList());
+               // largos.forEach(System.out::println);
                 System.out.println("materiales"+largos);
                 productos = productService.findByMateriales(largos);
             }
@@ -112,13 +116,11 @@ public class ProductController {
 
 
 
-        model.addAttribute("productos",productos);
-        model.addAttribute("filter",filter);
 
-       // model.addAttribute("filter",filter);
-        //model.addAttribute("usuario", usuario);
 
-        return "pages/filtrar";
+
+
+        return ResponseEntity.ok(productos);
     }
 
    /* @GetMapping("pages/ver")

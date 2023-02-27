@@ -20,7 +20,7 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public Product getProduct(Long id) {
-        return null;
+        return productRepository.findById(id).orElse(null);
     }
 
     @Override
