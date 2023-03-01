@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 import org.obisidiana.app.entity.Material;
 import org.obisidiana.app.entity.Product;
 import org.obisidiana.app.paso.Filter;
+import org.obisidiana.app.repository.IUserRepostory;
 import org.obisidiana.app.service.MaterialService;
 import org.obisidiana.app.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,9 @@ public class ProductController {
 
     @Autowired
     private MaterialService materialService;
+    
+    @Autowired
+    private IUserRepostory usuarioRepository;
 
 
     @RequestMapping(value = "/index" ,method = RequestMethod.GET)

@@ -33,55 +33,55 @@ function loadPage(page, pageElement) {
 	});
 
 	img.load(function() {
-		
+
 		// Set the size
-		$(this).css({width: '100%', height: '100%'});
+		$(this).css({ width: '100%', height: '100%' });
 
 		// Add the image to the page after loaded
 
 		$(this).appendTo(pageElement);
 
 		// Remove the loader indicator
-		
+
 		pageElement.find('.loader').remove();
 	});
 
 	// Load the page
 
-	img.attr('src', 'pages/' +  page + '.jpg');
+	img.attr('src', 'pages/' + page + '.jpg');
 
 }
 
 
 function loadLargePage(page, pageElement) {
-	
+
 	var img = $('<img />');
 
 	img.load(function() {
 
 		var prevImg = pageElement.find('img');
-		$(this).css({width: '100%', height: '100%'});
+		$(this).css({ width: '100%', height: '100%' });
 		$(this).appendTo(pageElement);
 		prevImg.remove();
-		
+
 	});
 
 	// Loadnew page
-	
-	img.attr('src', 'pages/' +  page + '-large.jpg');
+
+	img.attr('src', 'pages/' + page + '-large.jpg');
 }
 
 
 function loadSmallPage(page, pageElement) {
-	
+
 	var img = pageElement.find('img');
 
-	img.css({width: '100%', height: '100%'});
+	img.css({ width: '100%', height: '100%' });
 
 	img.unbind('load');
 	// Loadnew page
 
-	img.attr('src', 'pages/' +  page + '.jpg');
+	img.attr('src', 'pages/' + page + '.jpg');
 }
 
 
@@ -89,6 +89,6 @@ function loadSmallPage(page, pageElement) {
 // http://code.google.com/p/chromium/issues/detail?id=128488
 function isChrome() {
 
-	return navigator.userAgent.indexOf('Chrome')!=-1;
+	return navigator.userAgent.indexOf('Chrome') != -1;
 
 }

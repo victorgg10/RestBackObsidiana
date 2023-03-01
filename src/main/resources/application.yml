@@ -30,7 +30,7 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: created-drop
     database-platform: org.hibernate.dialect.H2Dialect
     properties:
       hibernate:

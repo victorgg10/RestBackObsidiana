@@ -1,54 +1,54 @@
-document.addEventListener('DOMContentLoaded',function(){
-  agregarEncabezado();
+document.addEventListener('DOMContentLoaded', function() {
+	agregarEncabezado();
 });
 
-function agregarEncabezado(){
-  
+function agregarEncabezado() {
 
-        //link.href = 'http://fonts.googleapis.com/css?family=Oswald&effect=neon';
-        
-        let link2 = document.createElement('link');
-        
-        link2.rel = 'stylesheet';
-        link2.href =  href="../css/normalize.css"
-        document.head.appendChild(link2);
-        let link3 = document.createElement('link');
-       
-        link3.rel = 'preconnect';
-        link3.href =  href="https://fonts.googleapis.com"
-        document.head.appendChild(link3);
 
-        let link4 = document.createElement('link');
-        
-        link4.rel = 'stylesheet';
-        link4.href =  href="https://fonts.googleapis.com/css2?family=Suez+One&display=swa";
-        document.head.appendChild(link4);
+	//link.href = 'http://fonts.googleapis.com/css?family=Oswald&effect=neon';
 
-        let link = document.createElement('link');
-        link.type = 'text/css';
-        link.rel = 'stylesheet';
-        link.href =  href="../css/barra.css"
-        document.head.appendChild(link);
+	let link2 = document.createElement('link');
 
-        let script2= document.createElement('script');
-        
-        script2.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js';
-        document.body.appendChild(script2);
+	link2.rel = 'stylesheet';
+	link2.href = href = "../css/normalize.css"
+	document.head.appendChild(link2);
+	let link3 = document.createElement('link');
 
-        let script = document.createElement('script');
-        
-        script.src = '../js/bar.js';
-        document.body.appendChild(script);
+	link3.rel = 'preconnect';
+	link3.href = href = "https://fonts.googleapis.com"
+	document.head.appendChild(link3);
 
-        
+	let link4 = document.createElement('link');
 
-        
+	link4.rel = 'stylesheet';
+	link4.href = href = "https://fonts.googleapis.com/css2?family=Suez+One&display=swa";
+	document.head.appendChild(link4);
 
-        
+	let link = document.createElement('link');
+	link.type = 'text/css';
+	link.rel = 'stylesheet';
+	link.href = href = "../css/barra.css"
+	document.head.appendChild(link);
 
-      
-  let nav = document.querySelector('header')
-    nav.innerHTML = `
+	let script2 = document.createElement('script');
+
+	script2.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js';
+	document.body.appendChild(script2);
+
+	let script = document.createElement('script');
+
+	script.src = '../js/bar.js';
+	document.body.appendChild(script);
+
+
+
+
+
+
+
+
+	let nav = document.querySelector('header')
+	nav.innerHTML = `
    
     <section class="navigation">
                 <div class="nav-container">

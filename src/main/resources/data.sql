@@ -64,3 +64,11 @@ VALUES ( 'Dije de Agata Azul','https://res.cloudinary.com/dzham2sp8/image/upload
 
 INSERT INTO productos (name,dire,cost,mat_id,typ_id)
 VALUES ( 'Anillo de Agata','https://res.cloudinary.com/dzham2sp8/image/upload/v1676394415/filtrar/agate-665285_1920-removebg-preview_gzbamd.jpg',199.99,1,2);
+
+DELETE FROM `user`;
+
+INSERT INTO `user` (`email`, `name`, `password`) VALUES("juancho@gmail.com","juancho","123");
+INSERT INTO `user` (`email`, `name`, `password`) VALUES("pepe@gmail.com","pepe","1234");
+INSERT INTO `user` (`email`, `name`, `password`) VALUES("pedrino@gmail.com","pedrin","1235");
+INSERT INTO `user` (`email`, `name`, `password`) VALUES("paco@gmail.com","paco","1236");
+INSERT INTO `user` (`email`, `name`, `password`) VALUES("chato@gmail.com","chato","1273");
